@@ -217,15 +217,7 @@ section {
     color: #39a6b2;
     font-size: 23px;
   }*/
-  .step-text p {
-    color: #39a6b2;
-    font-size: 18px;
-  }
-  .step-text h4 {
-    font-size: 26px;
-    line-height: 1.5;
-    color: #024e76;
-  }
+  
   /*.steps span {
     font-size: 38px;
   }*/
@@ -246,6 +238,16 @@ section {
   }
   .step-text {
     flex: 12;
+  }
+
+  .step-text p {
+    color: #39a6b2;
+    font-size: 18px;
+  }
+  .step-text h4 {
+    font-size: 26px;
+    line-height: 1.5;
+    color: #024e76;
   }
 
   /*.trainers {
@@ -314,15 +316,18 @@ section {
 
  .contact-info iframe {
    height: 400px;
-   width: 400px;
+   /*width: 400px;*/
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
  }
 
  .contact-info div {
-    display: inline-block;
+    /*display: inline-block;
     width: 410px;
     vertical-align: top;
     text-align: left;
-    margin: 30px 0 0 60px;
+    margin: 30px 0 0 60px;*/
     color: white;
   }
 
@@ -334,14 +339,45 @@ section {
   .contact-info p, .contact-info address {
     margin: 20px 0;
     line-height: 1.5;
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
   }
   
   .contact-info a {
     color: #fce138;
   }
+/* Here, the * selector is saying "select all elements that are direct children of anything with a class of contact-info." 
+The > symbol means it's looking specifically for direct children of the element listed first. 
+In this case, it's selecting all children of the element with contact-info as its class.
+Remember, however, that CSS reads right to left. This means that if the first selector it reads is *, 
+it will try and find every element on the page first, then look at the .contact-info, and then filter out the elements that aren't a direct child of it. 
+This wouldn't be a good approach in a big website, but it won't affect performance for a site this size.
+In this case, it will apply the preceding styles to the three flexbox child elements in the contact-info flexbox container, so we're now all set with this section's flexbox layout. */
 
+  .contact-info > * {
+    flex: 1;
+    margin: 15px;
+  }
+
+  .contact-form input, .contact-form textarea {
+    border: 1px solid #024e76;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: #024e76;
+    width: 100%;
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+  .contact-form button {
+    width: 100%;
+    border: none;
+    background: #fce138;
+    color: #024e76;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+  }
   .flex-row {
     display: flex;
   }
